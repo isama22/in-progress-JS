@@ -1,0 +1,72 @@
+const cards = [
+  {
+    rank: "queen",
+    suit: "hearts",
+    cardImage: "images/queen-of-hearts.png"
+    //method goes here? from the directions on the last page of the objects lesson 
+//displayCard: function () {
+//console.log("user flipped over " + cards[cardId].rank);
+//console.log("user flipped over " + cards[cardId].cardImage);
+//} 
+},
+    {
+    rank: "queen",
+    suit: "diamonds",
+    cardImage: "images/queen-of-diamonds.png"
+  },
+  {
+    rank: "king",
+    suit: "hearts",
+    cardimage: "images/king-of-hearts.png"
+  },
+    {
+    rank: "king",
+    suit: "diamonds",
+    cardImage: "images/king-of-diamonds.png" 
+  }
+];
+
+//method gets called outside the object?
+//cards.displayCard();
+
+//loop through the cards array within this function 
+ function createBoard(){
+  for (let i = 0; i < cards.length; i++) {
+    // Logic here
+    let cardElement = document.createElement('img');
+    let cardElement.setAttribute('img', 'src= "images/back.png"');
+    let cardElement.setAttribute('data-id', 'i');
+     cardElement.addEventListener(‘click’, flipCard);
+    document.getElementById('game-board').appendChild(cardElement); 
+}; 
+}
+createBoard();
+
+
+let cardsInPlay = [];
+
+let cardId = cards[0];
+
+function checkForMatch(){
+ if (cardsInPlay[0] === cardsInPlay[2]) {
+  //alert("you found a match");
+} else {
+  //alert("sorry try again");
+} 
+}
+
+function flipCard(){
+  let cardId = this.getAttribute('data-id');
+  let cardElement.setAttribute(this.'src' = cards[cardId].cardImage);
+if (cardsInPlay.length === 2) {
+  console.log("2");
+} else {
+  console.log("no");
+}
+
+checkForMatch();
+
+console.log("user flipped over " + cards[cardId].rank);
+}
+
+cardsInPlay.push("cards[cardId].rank");
